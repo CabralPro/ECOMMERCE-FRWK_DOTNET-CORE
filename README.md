@@ -1,4 +1,4 @@
-# CRUD-IRPF_DOTNET-CORE
+# ECOMMERCE-FRWK_DOTNET-CORE
 
 CRUD completo de um sistema simples de cadastro de produtos.
 
