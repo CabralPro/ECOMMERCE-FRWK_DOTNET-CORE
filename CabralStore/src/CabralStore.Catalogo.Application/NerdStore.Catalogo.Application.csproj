@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CabralStore.Catalogo.Data\CabralStore.Catalogo.Data.csproj" />
+    <ProjectReference Include="..\CabralStore.Catalogo.Domain\CabralStore.Catalogo.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="automapper" Version="8.1.1" />
+  </ItemGroup>
+
+</Project>
