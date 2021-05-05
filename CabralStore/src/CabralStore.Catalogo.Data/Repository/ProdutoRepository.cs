@@ -3,8 +3,6 @@ using CabralStore.Core.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace CabralStore.Catalogo.Data.Repository
@@ -30,16 +28,6 @@ namespace CabralStore.Catalogo.Data.Repository
             //return await _context.Produtos.FindAsync(id);
         }
 
-        public async Task<IEnumerable<Produto>> ObterPorCategoria(int codigo)
-        {
-            return await _context.Produtos.AsNoTracking().Include(p => p.Categoria).Where(c => c.Categoria.Codigo == codigo).ToListAsync();
-        }
-
-        public async Task<IEnumerable<Categoria>> ObterCategorias()
-        {
-            return await _context.Categorias.AsNoTracking().ToListAsync();
-        }
-
         public void Adicionar(Produto produto)
         {
             _context.Produtos.Add(produto);
@@ -54,16 +42,6 @@ namespace CabralStore.Catalogo.Data.Repository
         {
             var produto = _context.Produtos.AsNoTracking().FirstOrDefaultAsync(p => p.Id == id).Result;
             _context.Produtos.Remove(produto);
-        }
-
-        public void Adicionar(Categoria categoria)
-        {
-            _context.Categorias.Add(categoria);
-        }
-
-        public void Atualizar(Categoria categoria)
-        {
-            _context.Categorias.Update(categoria);
         }
 
         public void Dispose()

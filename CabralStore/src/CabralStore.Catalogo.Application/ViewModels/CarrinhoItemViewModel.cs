@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CabralStore.Vendas.Application.Queries.ViewModels
+namespace CabralStore.Catalogo.Application.ViewModels
 {
     public class CarrinhoItemViewModel
     {
@@ -9,6 +9,5 @@ namespace CabralStore.Vendas.Application.Queries.ViewModels
         public int Quantidade { get; set; }
         public decimal ValorUnitario { get; set; }
         public decimal ValorTotal { get; set; }
-
     }
 }

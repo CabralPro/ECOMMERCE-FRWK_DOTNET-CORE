@@ -3,14 +3,16 @@ using System;
 using CabralStore.Catalogo.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CabralStore.Catalogo.Data.Migrations
 {
     [DbContext(typeof(CatalogoContext))]
-    partial class CatalogoContextModelSnapshot : ModelSnapshot
+    [Migration("20210505031752_Catalogo")]
+    partial class Catalogo
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -3,8 +3,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using CabralStore.Catalogo.Application.Services;
 using System.Collections.Generic;
-using CabralStore.Vendas.Application.Queries.ViewModels;
 using Microsoft.AspNetCore.Authorization;
+using CabralStore.Catalogo.Application.ViewModels;
 
 namespace CabralStore.WebApp.API.Controllers
 {

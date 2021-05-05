@@ -6,160 +6,193 @@
 	},
 	"item": [
 		{
-			"name": "Admin Produtos",
+			"name": "Admin",
 			"item": [
 				{
-					"name": "Cadastrar produto",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwicm9sZSI6ImFsbCIsIm5iZiI6MTYyMDE0NTY4MCwiZXhwIjoxNjIwMTUyODgwLCJpYXQiOjE2MjAxNDU2ODB9.HgqVmBI15Jag_LOyndJGVa0Z0u_USc94bAKy6cz0xr0",
-									"type": "string"
+					"name": "Products",
+					"item": [
+						{
+							"name": "Atualizar produto",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"5587df81-c3f9-456e-ab52-cf6e764b354b\",\r\n    \"categoriaId\": \"4c88815e-97bd-4009-bc97-27aa5d7ec9b1\",\r\n    \"nome\": \"Produto Teste\",\r\n    \"descricao\": \"Descrição do produto teste\",\r\n    \"ativo\": false,\r\n    \"valor\": 15.8,\r\n    \"dataCadastro\": \"2021-05-04T13:30:02.8694498\",\r\n    \"imagem\": \"https://inoveteste.com.br/wp-content/uploads/2019/05/Logo-Horizontal-03-1.png\",\r\n    \"quantidadeEstoque\": 10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/AdminProdutos/AtualizarProduto",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"AdminProdutos",
+										"AtualizarProduto"
+									]
 								}
-							]
+							},
+							"response": []
 						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"categoriaId\": \"4c88815e-97bd-4009-bc97-27aa5d7ec9b1\",\r\n    \"nome\": \"Produto Teste\",\r\n    \"descricao\": \"Descrição do produto teste\",\r\n    \"imagem\": \"https://inoveteste.com.br/wp-content/uploads/2019/05/Logo-Horizontal-03-1.png\",\r\n    \"quantidadeEstoque\": \"10\",\r\n    \"altura\": \"5\",\r\n    \"largura\": \"5\",\r\n    \"profundidade\": \"10\",\r\n    \"valor\": 15.80\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+						{
+							"name": "Cadastrar produto",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"categoriaId\": \"4c88815e-97bd-4009-bc97-27aa5d7ec9b1\",\r\n    \"nome\": \"Produto Teste\",\r\n    \"descricao\": \"Descrição do produto teste\",\r\n    \"imagem\": \"https://inoveteste.com.br/wp-content/uploads/2019/05/Logo-Horizontal-03-1.png\",\r\n    \"quantidadeEstoque\": \"10\",\r\n    \"valor\": 15.80\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/AdminProdutos/NovoProduto",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"AdminProdutos",
+										"NovoProduto"
+									]
 								}
-							}
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "https://{{host}}/AdminProdutos/NovoProduto",
-							"protocol": "https",
-							"host": [
-								"{{host}}"
-							],
-							"path": [
-								"AdminProdutos",
-								"NovoProduto"
-							]
+						{
+							"name": "Deletar produto",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/AdminProdutos/DeletarProduto?id=5587df81-c3f9-456e-ab52-cf6e764b354b",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"AdminProdutos",
+										"DeletarProduto"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "5587df81-c3f9-456e-ab52-cf6e764b354b"
+										}
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "Deletar produto",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
+					"name": "Autenticação",
+					"item": [
+						{
+							"name": "Login",
+							"event": [
 								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwicm9sZSI6ImFsbCIsIm5iZiI6MTYyMDE0NTY4MCwiZXhwIjoxNjIwMTUyODgwLCJpYXQiOjE2MjAxNDU2ODB9.HgqVmBI15Jag_LOyndJGVa0Z0u_USc94bAKy6cz0xr0",
-									"type": "string"
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var response = JSON.parse(responseBody);\r",
+											"\r",
+											"postman.setEnvironmentVariable(\"token\", response.token);"
+										],
+										"type": "text/javascript"
+									}
 								}
-							]
-						},
-						"method": "DELETE",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"categoriaId\": \"4c88815e-97bd-4009-bc97-27aa5d7ec9b1\",\r\n    \"nome\": \"Aaa\",\r\n    \"descricao\": \"asdasdas\",\r\n    \"imagem\": \"adsad\",\r\n    \"quantidadeEstoque\": \"1\",\r\n    \"altura\": \"1\",\r\n    \"largura\": \"1\",\r\n    \"profundidade\": \"1\",\r\n    \"valor\": 110\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "https://{{host}}/AdminProdutos/DeletarProduto?id=eb0e5123-f3f6-4fc0-1608-08d90f199db4",
-							"protocol": "https",
-							"host": [
-								"{{host}}"
 							],
-							"path": [
-								"AdminProdutos",
-								"DeletarProduto"
-							],
-							"query": [
-								{
-									"key": "id",
-									"value": "eb0e5123-f3f6-4fc0-1608-08d90f199db4"
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwicm9sZSI6ImFsbCIsIm5iZiI6MTYyMDE0NTY4MCwiZXhwIjoxNjIwMTUyODgwLCJpYXQiOjE2MjAxNDU2ODB9.HgqVmBI15Jag_LOyndJGVa0Z0u_USc94bAKy6cz0xr0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userName\": \"admin\",\r\n  \"password\": \"admin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/AdminAuthentication/SingIn",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"AdminAuthentication",
+										"SingIn"
+									]
 								}
-							]
+							},
+							"response": []
 						}
-					},
-					"response": []
-				},
-				{
-					"name": "Atualizar produto",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwicm9sZSI6ImFsbCIsIm5iZiI6MTYyMDE0NTY4MCwiZXhwIjoxNjIwMTUyODgwLCJpYXQiOjE2MjAxNDU2ODB9.HgqVmBI15Jag_LOyndJGVa0Z0u_USc94bAKy6cz0xr0",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"id\": \"27c63798-e690-4d4f-1609-08d90f199db4\",\r\n    \"categoriaId\": \"4c88815e-97bd-4009-bc97-27aa5d7ec9b1\",\r\n    \"nome\": \"Produto Teste\",\r\n    \"descricao\": \"Descrição do produto teste\",\r\n    \"ativo\": false,\r\n    \"valor\": 15.8,\r\n    \"dataCadastro\": \"2021-05-04T13:30:02.8694498\",\r\n    \"imagem\": \"https://inoveteste.com.br/wp-content/uploads/2019/05/Logo-Horizontal-03-1.png\",\r\n    \"quantidadeEstoque\": 10,\r\n    \"altura\": 5,\r\n    \"largura\": 5,\r\n    \"profundidade\": 10,\r\n    \"categorias\": null\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "https://{{host}}/AdminProdutos/AtualizarProduto",
-							"protocol": "https",
-							"host": [
-								"{{host}}"
-							],
-							"path": [
-								"AdminProdutos",
-								"AtualizarProduto"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Admin Autenticação",
-			"item": [
-				{
-					"name": "Login",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"userName\": \"admin\",\r\n    \"password\": \"admin\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "https://{{host}}/AdminAuthentication/SingIn",
-							"protocol": "https",
-							"host": [
-								"{{host}}"
-							],
-							"path": [
-								"AdminAuthentication",
-								"SingIn"
-							]
-						}
-					},
-					"response": []
+					]
 				}
 			]
 		},
@@ -169,11 +202,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://{{host}}/Vitrine/ListaProdutos",
+					"raw": "https://localhost:5001/Vitrine/ListaProdutos",
 					"protocol": "https",
 					"host": [
-						"{{host}}"
+						"localhost"
 					],
+					"port": "5001",
 					"path": [
 						"Vitrine",
 						"ListaProdutos"
@@ -199,7 +233,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "[\r\n    {\r\n        \"produtoId\": \"de10bfb9-ec5d-492b-b619-08d90f126dee\",\r\n        \"produtoNome\": \"Melancia\",\r\n        \"quantidade\": 1,\r\n        \"valorTotal\": 5.25,\r\n        \"valorUnitario\": 5.25\r\n    },\r\n    {\r\n        \"produtoId\": \"5955a205-6b41-48af-5dee-08d90e91370d\",\r\n        \"produtoNome\": \"Banana\",\r\n        \"quantidade\": 1,\r\n        \"valorTotal\": 15,\r\n        \"valorUnitario\": 15\r\n    }\r\n]",
+					"raw": "[\r\n    {\r\n        \"produtoId\": \"30ecf517-dd70-49a5-9ef0-c6395e89c309\",\r\n        \"produtoNome\": \"Melancia\",\r\n        \"quantidade\": 1,\r\n        \"valorTotal\": 5.25,\r\n        \"valorUnitario\": 5.25\r\n    }\r\n]",
 					"options": {
 						"raw": {
 							"language": "json"

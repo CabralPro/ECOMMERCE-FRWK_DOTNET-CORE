@@ -57,7 +57,7 @@ namespace CabralStore.WebApp.API
 
             // This method gets called by the runtime. Use this method to add services to the container.
             services.AddDbContext<CatalogoContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                 options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddSwaggerGen(opt =>
             {

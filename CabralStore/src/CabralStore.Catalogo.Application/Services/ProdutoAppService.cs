@@ -23,11 +23,6 @@ namespace CabralStore.Catalogo.Application.Services
             _estoqueService = estoqueService;
         }
 
-        public async Task<IEnumerable<ProdutoViewModel>> ObterPorCategoria(int codigo)
-        {
-            return _mapper.Map<IEnumerable<ProdutoViewModel>>(await _produtoRepository.ObterPorCategoria(codigo));
-        }
-
         public async Task<ProdutoViewModel> ObterPorId(Guid id)
         {
             return _mapper.Map<ProdutoViewModel>(await _produtoRepository.ObterPorId(id));
@@ -36,11 +31,6 @@ namespace CabralStore.Catalogo.Application.Services
         public async Task<IEnumerable<ProdutoViewModel>> ObterTodos()
         {
             return _mapper.Map<IEnumerable<ProdutoViewModel>>(await _produtoRepository.ObterTodos());
-        }
-
-        public async Task<IEnumerable<CategoriaViewModel>> ObterCategorias()
-        {
-            return _mapper.Map<IEnumerable<CategoriaViewModel>>(await _produtoRepository.ObterCategorias());
         }
 
         public async Task<bool> AdicionarProduto(ProdutoViewModel produtoViewModel)

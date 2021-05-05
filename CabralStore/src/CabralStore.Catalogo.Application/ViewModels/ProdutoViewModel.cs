@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace CabralStore.Catalogo.Application.ViewModels
@@ -33,19 +32,5 @@ namespace CabralStore.Catalogo.Application.ViewModels
         [Range(1, int.MaxValue, ErrorMessage = "O campo {0} precisa ter o valor mínimo de {1}")]
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public int QuantidadeEstoque { get; set; }
-
-        [Range(1, int.MaxValue, ErrorMessage = "O campo {0} precisa ter o valor mínimo de {1}")]
-        [Required(ErrorMessage = "O campo {0} é obrigatório")]
-        public int Altura { get; set; }
-
-        [Range(1, int.MaxValue, ErrorMessage = "O campo {0} precisa ter o valor mínimo de {1}")]
-        [Required(ErrorMessage = "O campo {0} é obrigatório")]
-        public int Largura { get; set; }
-
-        [Range(1, int.MaxValue, ErrorMessage = "O campo {0} precisa ter o valor mínimo de {1}")]
-        [Required(ErrorMessage = "O campo {0} é obrigatório")]
-        public int Profundidade { get; set; }
-
-        public IEnumerable<CategoriaViewModel> Categorias { get; set; }
     }
 }

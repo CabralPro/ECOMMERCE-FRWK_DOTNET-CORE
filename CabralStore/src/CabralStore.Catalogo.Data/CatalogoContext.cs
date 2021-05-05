@@ -16,8 +16,6 @@ namespace CabralStore.Catalogo.Data
 
         public DbSet<Produto> Produtos { get; set; }
 
-        public DbSet<Categoria> Categorias { get; set; }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             foreach (var property in modelBuilder.Model.GetEntityTypes().SelectMany(

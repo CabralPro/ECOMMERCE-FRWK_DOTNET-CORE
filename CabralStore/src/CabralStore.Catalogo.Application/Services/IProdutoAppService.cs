@@ -7,10 +7,8 @@ namespace CabralStore.Catalogo.Application.Services
 {
     public interface IProdutoAppService : IDisposable
     {
-        Task<IEnumerable<ProdutoViewModel>> ObterPorCategoria(int codigo);
         Task<ProdutoViewModel> ObterPorId(Guid id);
         Task<IEnumerable<ProdutoViewModel>> ObterTodos();
-        Task<IEnumerable<CategoriaViewModel>> ObterCategorias();
 
         Task<bool> AdicionarProduto(ProdutoViewModel produtoViewModel);
         Task<bool> AtualizarProduto(ProdutoViewModel produtoViewModel);
